@@ -11,11 +11,11 @@ const scoreText = document.getElementById("scoreText");
 const bird = new Image();
 bird.src = "irem.PNG";
 
-let gravity = 0.40;
-let velocity = -6;
+let gravity = 0.6;
+let velocity = - 6;
 let birdX = 90;
 let birdY = 300;
-let birdSize = 90;
+let birdSize = 80;
 
 let pipes = [];
 let score = 0;
@@ -29,7 +29,7 @@ function startGame() {
     gameOver.style.display = "none";
 
     birdY = 300;
-    velocity = 0;
+    velocity = -11;
     score = 0;
     pipes = [];
     playing = true;
@@ -50,7 +50,7 @@ function jump() {
     velocity = -8;
 }
 function createPipe() {
-    const gap =300;
+    const gap =350;
     const topHeight = Math.random() * 220 + 80;
 
     pipes.push({
@@ -88,7 +88,7 @@ function updatePipes() {
 
     pipes.forEach(pipe => {
 
-        pipe.x -= 3;
+        pipe.x -= 2.5;
 
         if (!pipe.passed && pipe.x + 70 < birdX) {
 
