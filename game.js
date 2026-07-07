@@ -11,8 +11,8 @@ const scoreText = document.getElementById("scoreText");
 const bird = new Image();
 bird.src = "irem.PNG";
 
-let gravity = 0.35;
-let velocity = -7;
+let gravity = 0.45;
+let velocity = -8.5;
 let birdX = 90;
 let birdY = 300;
 let birdSize = 130;
@@ -50,7 +50,7 @@ function jump() {
     velocity = -8;
 }
 function createPipe() {
-    const gap = 190;
+    const gap = 240;
     const topHeight = Math.random() * 220 + 80;
 
     pipes.push({
@@ -96,13 +96,16 @@ function updatePipes() {
             score++;
 
         }
+const hitbox = 30;
 
-        if (
-            birdX + birdSize - 20 > pipe.x &&
-            birdX + 20 < pipe.x + 70 &&
-            (
-                birdY + 20 < pipe.top ||
-                birdY + birdSize - 20 > pipe.bottom
+if (
+    birdX + birdSize - hitbox > pipe.x &&
+    birdX + hitbox < pipe.x + 70 &&
+    (
+        birdY + hitbox < pipe.top ||
+        birdY + birdSize - hitbox > pipe.bottom
+    )
+)
             )
         ) {
 
