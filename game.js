@@ -12,10 +12,10 @@ const bird = new Image();
 bird.src = "irem.PNG";
 
 let gravity = 0.45;
-let velocity = -8.5;
+let velocity = -6;
 let birdX = 90;
 let birdY = 300;
-let birdSize = 130;
+let birdSize = 100;
 
 let pipes = [];
 let score = 0;
@@ -50,7 +50,7 @@ function jump() {
     velocity = -8;
 }
 function createPipe() {
-    const gap = 240;
+    const gap = 250;
     const topHeight = Math.random() * 220 + 80;
 
     pipes.push({
@@ -96,7 +96,7 @@ function updatePipes() {
             score++;
 
         }
-const hitbox = 30;
+const hitbox = 40;
 
 if (
     birdX + birdSize - hitbox > pipe.x &&
