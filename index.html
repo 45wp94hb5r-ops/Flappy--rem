@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Flappy İrem</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ANA MENÜ -->
+
+<div id="menu">
+
+<h1 id="title">FLAPPY İREM</h1>
+
+<button onclick="startGame()">
+▶ OYNA
+</button>
+
+<button id="scoreButton">
+🏆 SKORLAR
+</button>
+
+<button id="settingsButton">
+⚙ AYARLAR
+</button>
+
+<button id="loveButton">
+❤️ İREMİ SEVİYORUM ❤️
+</button>
+
+</div>
+
+
+<!-- OYUN -->
+
+<canvas id="game"></canvas>
+
+
+<!-- OYUN BİTTİ -->
+
+<div id="gameOver">
+
+<h1>OYUN BİTTİ</h1>
+
+<h2 id="scoreText"></h2>
+
+<button onclick="restartGame()">
+
+🔄 Tekrar Oyna
+
+</button>
+
+<button onclick="backMenu()">
+
+🏠 Ana Menü
+
+</button>
+
+</div>
+
+
+<!-- SESLER -->
+
+<audio id="jumpSound" src="sounds/jump.mp3"></audio>
+
+<audio id="hitSound" src="sounds/hit.mp3"></audio>
+
+<audio id="pointSound" src="sounds/point.mp3"></audio>
+
+<audio id="music" src="sounds/music.mp3" loop></audio>
+
+
+<script src="game.js"></script>
+
+</body>
+
+</html>
