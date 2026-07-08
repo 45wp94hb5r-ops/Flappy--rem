@@ -420,8 +420,18 @@ console.log(loveButton);
 
 loveButton.onclick = function () {
     const mesaj = document.createElement("div");
-mesaj.innerHTML = "💖 İrem seni çok seviyorum! 💖";
-
+mesaj.innerHTML = `
+<div style="font-size:40px;">❤️</div>
+<div>Seni Seviyorum</div>
+<div style="font-size:34px;font-weight:bold;">İREM</div>
+<div style="font-size:40px;">💖</div>
+`;
+mesaj.style.width = "300px";
+mesaj.style.textAlign = "center";
+mesaj.style.lineHeight = "1.4";
+mesaj.style.fontSize = "30px";
+mesaj.style.padding = "25px";
+mesaj.style.borderRadius = "25px";
 mesaj.style.position = "fixed";
 mesaj.style.top = "50%";
 mesaj.style.left = "50%";
