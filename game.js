@@ -92,12 +92,13 @@ function startGame() {
 
     createPipe();
 
-    playing = true;
+   playing = true;
 
-    music.currentTime = 0;
-     music.play().catch(()=>{});
+music.pause();
+music.currentTime = 0;
+music.play().catch(()=>{});
 
-    loop();
+requestAnimationFrame(loop);
 
 }
 
@@ -308,7 +309,7 @@ if (
             pointSound.currentTime = 0;
             pointSound.play().catch(()=>{});
 
-            for(let i=0;i<10;i++){
+            for(let i=0;i<5;i++){
 
                 hearts.push({
                     x:bird.x+bird.w/2+(Math.random()*20-10),
@@ -369,6 +370,8 @@ function endGame(){
 function loop(){
 
     if(!playing) return;
+    
+    requestAnimationFrame(loop)
 
     ctx.clearRect(
         0,
@@ -390,8 +393,6 @@ function loop(){
     drawBird();
 
     drawScore();
-
-    requestAnimationFrame(loop);
 
 }//========================
 // BAŞLANGIÇ AYARLARI
@@ -416,28 +417,3 @@ document.body.addEventListener(
         if (playing) e.preventDefault();
     },
     { passive: false }
-);
-
-// FPS sabit olsun
-let lastTime = 0;
-
-function gameLoop(time) {
-
-    if (!playing) return;
-
-    const delta = time - lastTime;
-
-    if (delta > 16) {
-        lastTime = time;
-        loop();
-    }
-
-    requestAnimationFrame(gameLoop);
-
-}
-
-// startGame fonksiyonunun en sonuna
-// loop();
-// yerine bunu yaz:
-
-// requestAnimationFrame(gameLoop);
