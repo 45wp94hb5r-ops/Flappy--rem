@@ -348,6 +348,7 @@ function endGame(){
     playing=false;
 
     music.pause();
+    music.currentTime = 0;
 
     hitSound.currentTime=0;
     hitSound.play().catch(()=>{});
@@ -401,11 +402,6 @@ function loop(){
 // Resimler yüklenince ilk ekranı çiz
 bg.onload = () => {
     ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
-
-    if (logo) {
-        // İstersen burada logo çizebilirsin.
-    }
-};
 
 // Canvas'a odaklan
 canvas.setAttribute("tabindex", "1");
