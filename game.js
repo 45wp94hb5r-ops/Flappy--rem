@@ -443,7 +443,37 @@ loveButton.onclick = function () {
         <b>⚠️ Fazla dozda İrem aldın! 💖</b>
 
         `;
+// 💖 Büyük aşk patlaması
+for (let i = 0; i < 180; i++) {
 
+    const heart = document.createElement("div");
+
+    const emojis = ["💖","💗","💕","❤️","💘","✨","🌸"];
+    heart.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = Math.random() * window.innerHeight + "px";
+    heart.style.fontSize = (20 + Math.random() * 50) + "px";
+    heart.style.pointerEvents = "none";
+    heart.style.zIndex = "999999";
+    heart.style.transition = "all 3s ease-out";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.style.transform =
+            `translate(${Math.random()*600-300}px, ${Math.random()*600-300}px)
+             rotate(${Math.random()*1080}deg)
+             scale(${1 + Math.random()*2})`;
+
+        heart.style.opacity = "0";
+    }, 30);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 3000);
+}
     }
 
     mesaj.style.position = "fixed";
