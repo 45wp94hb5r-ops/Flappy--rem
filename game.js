@@ -288,7 +288,7 @@ function update() {
 const hitbox = 24;
 
 if (
-    bird.x + bird.w - hitbox > p.x 10 &&
+    bird.x + bird.w - hitbox > p.x + 10 &&
     bird.x + hitbox < p.x + pipeWidth - 10 &&
     (
         bird.y + hitbox < p.top ||
