@@ -452,19 +452,22 @@ document.body.appendChild(mesaj);
     kalp.innerHTML = "💖";
 
     kalp.style.position = "fixed";
-    kalp.style.left = Math.random() * 100 + "vw";
-    kalp.style.top = "100vh";
+kalp.style.left = Math.random() * 100 + "vw";
+kalp.style.top = (80 + Math.random() * 20) + "vh";
     kalp.style.fontSize = (20 + Math.random() * 20) + "px";
-    kalp.style.transition = "all 3s linear";
+    kalp.style.transition =
+    "transform 3s ease-out, top 3s linear, opacity 3s linear";
     kalp.style.pointerEvents = "none";
     kalp.style.zIndex = "99998";
 
     document.body.appendChild(kalp);
 
-    setTimeout(() => {
-        kalp.style.top = "-10vh";
-        kalp.style.opacity = "0";
-    }, 50);
+ setTimeout(() => {
+    kalp.style.top = (-10 - Math.random() * 20) + "vh";
+    kalp.style.transform =
+        `translateX(${Math.random() * 300 - 150}px) rotate(${Math.random() * 720}deg) scale(${0.6 + Math.random()})`;
+    kalp.style.opacity = "0";
+}, 50);
 
     setTimeout(() => kalp.remove(), 3000);
 }
