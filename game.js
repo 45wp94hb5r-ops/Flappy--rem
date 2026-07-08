@@ -201,8 +201,8 @@ function drawPipes() {
             pipeImg,
             p.x,
             p.bottom,
-            80,
-            canvas.height - p.bottom
+            110,
+            canvas.height - p.bottom + 50
         );
 
         // Üst boru
@@ -219,8 +219,8 @@ function drawPipes() {
             pipeImg,
             -40,
             0,
-            80,
-            p.top
+            110,
+            p.top + 50
         );
 
         ctx.restore();
@@ -286,7 +286,7 @@ function update() {
         // Çarpışma
         if (
             bird.x + bird.w - 25 > p.x &&
-            bird.x + 25 < p.x + 80 &&
+            bird.x + 25 < p.x + 110 &&
             (
                 bird.y + 25 < p.top ||
                 bird.y + bird.h - 25 > p.bottom
