@@ -500,9 +500,6 @@ loveButton.onclick = function () {
         loveIndex = 0;
     }
 };
-// 💖 Büyük aşk patlaması
-for (let i = 0; i < 180; i++) {
-
     const heart = document.createElement("div");
 
     const emojis = ["💖","💗","💕","❤️","💘","✨","🌸"];
@@ -613,28 +610,18 @@ for (let i = 0; i < 180; i++) {
 
     }, 1800);
 
-    loveIndex++;
+loveIndex++;
 
-    if (loveIndex >= loveLevels.length) {
-
-        loveIndex = 0;
-
-    }
-
+if (loveIndex >= loveLevels.length) {
+    loveIndex = 0;
+}
 };
 
 // Telefonlarda kaydırmayı engelle
-
 document.body.addEventListener(
-
     "touchmove",
-
     function (e) {
-
         if (playing) e.preventDefault();
-
     },
-
     { passive: false }
-    );
-    
+);
