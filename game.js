@@ -296,7 +296,7 @@ function update() {
         }
 
         // Skor
-        if (!p.passed && p.x + 80 < bird.x) {
+        if (!p.passed && p.x + 110 < bird.x) {
 
             p.passed = true;
             score++;
