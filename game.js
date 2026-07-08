@@ -297,7 +297,7 @@ if (
 ) {
     endGame();
 }
-        }
+
 
         // Skor
       if (!p.passed && p.x + pipeWidth < bird.x + 15)  {
