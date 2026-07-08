@@ -414,3 +414,10 @@ document.body.addEventListener(
     },
     { passive: false }
 );
+const loveButton = document.getElementById("loveButton");
+
+loveButton.addEventListener("click", function () {
+    if (navigator.vibrate) navigator.vibrate(150);
+
+    alert("💖 İrem seni çok seviyorum! 💖");
+});
