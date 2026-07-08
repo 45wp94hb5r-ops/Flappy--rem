@@ -94,8 +94,8 @@ function startGame() {
 
     playing = true;
 
-   // music.currentTime = 0;
-    // music.play().catch(()=>{});
+    music.currentTime = 0;
+     music.play().catch(()=>{});
 
     loop();
 
