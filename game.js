@@ -410,38 +410,57 @@ canvas.setAttribute("tabindex", "1");
 
 const loveButton = document.getElementById("loveButton");
 
-const loveLevels = [10, 40, 70, 100, "emin"];
+const loveLevels = [10, 40, 70, 100, "emin", "bagimli"];
 let loveIndex = 0;
 
 loveButton.onclick = function () {
 
     const value = loveLevels[loveIndex];
     const mesaj = document.createElement("div");
+if (value === "bagimli") {
 
-    if (value === "emin") {
+    mesaj.innerHTML = `
+    👑<br><br>
+    <b>🚨 BAŞARIM AÇILDI!</b><br><br>
+    💖 Resmen İrem bağımlısı oldun!<br><br>
+    ❤️ Sonsuz Sevgi Modu Aktif ❤️
+    `;
 
-        mesaj.innerHTML = `
-        🤨<br><br>
-        <b>Emin misin?</b><br><br>
-        ❤️ Fazla dozda İrem almaya devam edeceksin.
-        `;
+    // Buraya büyük kalp patlaması kodun gelecek.
 
-    } else if (value < 100) {
+} else if (value === "emin") {
 
-        mesaj.innerHTML = `
-        ❤️<br><br>
-        <b>İrem Dozu</b><br><br>
-        <span style="font-size:55px;">%${value}</span>
-        `;
+    mesaj.innerHTML = `
+    🤨<br><br>
+    <b>Son kararın mı?</b><br><br>
 
-    } else {
+    ❤️ Bir kez daha basarsan<br>
+    <span style="color:yellow;">
+    İrem bağımlısı olacaksın!
+    </span><br><br>
 
-        mesaj.innerHTML = `
-        ❤️❤️❤️<br><br>
-        <span style="font-size:55px;">%100</span><br><br>
-        <b>⚠️ Fazla dozda İrem aldın! 💖</b>
-        `;
+    ☢️ Geri dönüşü yok. 😅
+    `;
 
+} else if (value < 100) {
+
+    mesaj.innerHTML = `
+    ❤️<br><br>
+    <b>İrem Dozu</b><br><br>
+    <span style="font-size:55px;">%${value}</span>
+    `;
+
+} else {
+
+    mesaj.innerHTML = `
+    ❤️❤️❤️<br><br>
+    <span style="font-size:55px;">%100</span><br><br>
+    <b>⚠️ Fazla dozda İrem aldın! 💖</b>
+    `;
+
+    // 💖 Büyük aşk patlaması (şu anki kalp efekti kodun burada kalacak)
+}
+ 
         // 💖 Büyük aşk patlaması
         for (let i = 0; i < 180; i++) {
 
