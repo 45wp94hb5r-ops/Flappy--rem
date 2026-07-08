@@ -413,3 +413,4 @@ document.body.addEventListener(
         if (playing) e.preventDefault();
     },
     { passive: false }
+);
