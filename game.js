@@ -36,6 +36,7 @@ const music = document.getElementById("music");
 
 // Oyun değişkenleri
 let playing = false;
+let loveLevel = 0;
 let score = 0;
 let best = Number(localStorage.getItem("best")) || 0;
 
@@ -405,7 +406,50 @@ bg.onload = () => {
 };
 // Canvas'a odaklan
 canvas.setAttribute("tabindex", "1");
+loveButton.onclick = function () {
 
+    loveLevel += 10;
+
+    if (loveLevel > 100) {
+        loveLevel = 100;
+    }
+
+    const mesaj = document.createElement("div");
+
+    if (loveLevel < 100) {
+        mesaj.innerHTML = `
+        ❤️<br>
+        <b>İrem'i Sevme Oranı</b><br><br>
+        <span style="font-size:55px;">${loveLevel}%</span>
+        `;
+    } else {
+        mesaj.innerHTML = `
+        ❤️❤️❤️<br>
+        <span style="font-size:34px;">%100</span><br><br>
+        <b>⚠️ Fazla dozda İrem aldın! 💖</b>
+        `;
+    }
+
+    mesaj.style.position = "fixed";
+    mesaj.style.top = "50%";
+    mesaj.style.left = "50%";
+    mesaj.style.transform = "translate(-50%,-50%)";
+    mesaj.style.background = "#ff69b4";
+    mesaj.style.color = "white";
+    mesaj.style.padding = "30px";
+    mesaj.style.borderRadius = "25px";
+    mesaj.style.textAlign = "center";
+    mesaj.style.fontSize = "26px";
+    mesaj.style.fontWeight = "bold";
+    mesaj.style.boxShadow = "0 0 30px hotpink";
+    mesaj.style.zIndex = "99999";
+
+    document.body.appendChild(mesaj);
+
+    setTimeout(() => {
+        mesaj.remove();
+    }, 1800);
+};
 // Telefonlarda kaydırmayı engelle
 document.body.addEventListener(
     "touchmove",
@@ -418,58 +462,7 @@ const loveButton = document.getElementById("loveButton");
 
 console.log(loveButton);
 
-loveButton.onclick = function () {
-    const mesaj = document.createElement("div");
-mesaj.innerHTML = `
-<div style="font-size:40px;">❤️</div>
-<div>Seni Seviyorum</div>
-<div style="font-size:34px;font-weight:bold;">İREM</div>
-<div style="font-size:40px;">💖</div>
-`;
-mesaj.style.position = "fixed";
-mesaj.style.top = "50%";
-mesaj.style.left = "50%";
-mesaj.style.transform = "translate(-50%, -50%)";
-
-mesaj.style.width = "300px";
-mesaj.style.textAlign = "center";
-mesaj.style.lineHeight = "1.4";
-
-mesaj.style.background = "rgba(255,105,180,0.9)";
-mesaj.style.color = "white";
-mesaj.style.padding = "25px";
-mesaj.style.borderRadius = "25px";
-mesaj.style.fontSize = "30px";
-mesaj.style.fontWeight = "bold";
-mesaj.style.boxShadow = "0 0 40px hotpink";
-mesaj.style.border = "3px solid white";
-mesaj.style.backdropFilter = "blur(10px)";
-mesaj.style.zIndex = "99999";
-
-document.body.appendChild(mesaj);
-    for (let i = 0; i < 25; i++) {
-    const kalp = document.createElement("div");
-    kalp.innerHTML = "💖";
-
-    kalp.style.position = "fixed";
-kalp.style.left = Math.random() * 100 + "vw";
-kalp.style.top = (80 + Math.random() * 20) + "vh";
-    kalp.style.fontSize = (20 + Math.random() * 20) + "px";
-    kalp.style.transition =
-    "transform 3s ease-out, top 3s linear, opacity 3s linear";
-    kalp.style.pointerEvents = "none";
-    kalp.style.zIndex = "99998";
-
-    document.body.appendChild(kalp);
-
- setTimeout(() => {
-    kalp.style.top = (-10 - Math.random() * 20) + "vh";
-    kalp.style.transform =
-        `translateX(${Math.random() * 300 - 150}px) rotate(${Math.random() * 720}deg) scale(${0.6 + Math.random()})`;
-    kalp.style.opacity = "0";
-}, 50);
-
-    setTimeout(() => kalp.remove(), 3000);
+3000);
 }
 
 setTimeout(() => {
