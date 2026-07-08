@@ -419,5 +419,25 @@ const loveButton = document.getElementById("loveButton");
 console.log(loveButton);
 
 loveButton.onclick = function () {
-    alert("💖 İrem seni çok seviyorum! 💖");
+    const mesaj = document.createElement("div");
+mesaj.innerHTML = "💖 İrem seni çok seviyorum! 💖";
+
+mesaj.style.position = "fixed";
+mesaj.style.top = "50%";
+mesaj.style.left = "50%";
+mesaj.style.transform = "translate(-50%, -50%)";
+mesaj.style.background = "#ff69b4";
+mesaj.style.color = "white";
+mesaj.style.padding = "20px 35px";
+mesaj.style.borderRadius = "20px";
+mesaj.style.fontSize = "24px";
+mesaj.style.fontWeight = "bold";
+mesaj.style.zIndex = "99999";
+mesaj.style.boxShadow = "0 0 25px hotpink";
+
+document.body.appendChild(mesaj);
+
+setTimeout(() => {
+    mesaj.remove();
+}, 2500);
 };
