@@ -416,8 +416,8 @@ document.body.addEventListener(
 );
 const loveButton = document.getElementById("loveButton");
 
-loveButton.addEventListener("click", function () {
-    if (navigator.vibrate) navigator.vibrate(150);
+console.log(loveButton);
 
+loveButton.onclick = function () {
     alert("💖 İrem seni çok seviyorum! 💖");
-});
+};
