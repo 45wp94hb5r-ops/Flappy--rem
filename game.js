@@ -20,7 +20,7 @@ const bg = new Image();
 bg.src = "images/bg.PNG";
 
 const bird = new Image();
-bird.src = "images/irem.png";
+bird.src = "images/irem.PNG";
 
 const pipe = new Image();
 pipe.src = "images/pipe.PNG";
