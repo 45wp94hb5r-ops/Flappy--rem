@@ -143,3 +143,36 @@ font-size:26px;
     50%{transform:scale(1.1);}
     100%{transform:scale(1);}
 }
+#missions{
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:340px;
+    max-width:90%;
+    background:#ff69b4;
+    color:white;
+    padding:25px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 0 30px hotpink;
+    z-index:99999;
+}
+
+#missionList p{
+    margin:10px 0;
+    font-size:20px;
+}
+
+#missions button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:15px;
+    background:white;
+    color:#ff1493;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+}
