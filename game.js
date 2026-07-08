@@ -410,39 +410,96 @@ canvas.setAttribute("tabindex", "1");
 
 const loveButton = document.getElementById("loveButton");
 
-const loveLevels = [10, 40, 70, 100];
-
+const loveLevels = [10, 40, 70, 100, "emin"];
 let loveIndex = 0;
 
 loveButton.onclick = function () {
 
     const value = loveLevels[loveIndex];
-
     const mesaj = document.createElement("div");
 
-    if (value < 100) {
+    if (value === "emin") {
 
         mesaj.innerHTML = `
+        🤨<br><br>
+        <b>Emin misin?</b><br><br>
+        ❤️ Fazla dozda İrem almaya devam edeceksin.
+        `;
 
+    } else if (value < 100) {
+
+        mesaj.innerHTML = `
         ❤️<br><br>
-
         <b>İrem Dozu</b><br><br>
-
         <span style="font-size:55px;">%${value}</span>
-
         `;
 
     } else {
 
         mesaj.innerHTML = `
-
         ❤️❤️❤️<br><br>
-
         <span style="font-size:55px;">%100</span><br><br>
-
         <b>⚠️ Fazla dozda İrem aldın! 💖</b>
-
         `;
+
+        // 💖 Büyük aşk patlaması
+        for (let i = 0; i < 180; i++) {
+
+            const heart = document.createElement("div");
+            const emojis = ["💖","💗","💕","❤️","💘","✨","🌸"];
+
+            heart.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+
+            heart.style.position = "fixed";
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.top = Math.random() * window.innerHeight + "px";
+            heart.style.fontSize = (20 + Math.random() * 50) + "px";
+            heart.style.pointerEvents = "none";
+            heart.style.zIndex = "999999";
+            heart.style.transition = "all 3s ease-out";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.style.transform =
+                    `translate(${Math.random()*600-300}px, ${Math.random()*600-300}px)
+                     rotate(${Math.random()*1080}deg)
+                     scale(${1 + Math.random()*2})`;
+                heart.style.opacity = "0";
+            }, 30);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 3000);
+        }
+    }
+
+    mesaj.style.position = "fixed";
+    mesaj.style.top = "50%";
+    mesaj.style.left = "50%";
+    mesaj.style.transform = "translate(-50%,-50%)";
+    mesaj.style.background = "#ff69b4";
+    mesaj.style.color = "white";
+    mesaj.style.padding = "30px";
+    mesaj.style.borderRadius = "25px";
+    mesaj.style.textAlign = "center";
+    mesaj.style.fontSize = "28px";
+    mesaj.style.fontWeight = "bold";
+    mesaj.style.boxShadow = "0 0 30px hotpink";
+    mesaj.style.zIndex = "99999";
+
+    document.body.appendChild(mesaj);
+
+    setTimeout(() => {
+        mesaj.remove();
+    }, 1800);
+
+    loveIndex++;
+
+    if (loveIndex >= loveLevels.length) {
+        loveIndex = 0;
+    }
+};
 // 💖 Büyük aşk patlaması
 for (let i = 0; i < 180; i++) {
 
