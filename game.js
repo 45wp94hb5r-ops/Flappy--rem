@@ -493,19 +493,32 @@ if (value === "bagimli") {
         }
     }
 
-    mesaj.style.position = "fixed";
-    mesaj.style.top = "50%";
-    mesaj.style.left = "50%";
-    mesaj.style.transform = "translate(-50%,-50%)";
-    mesaj.style.background = "#ff69b4";
-    mesaj.style.color = "white";
-    mesaj.style.padding = "30px";
-    mesaj.style.borderRadius = "25px";
-    mesaj.style.textAlign = "center";
-    mesaj.style.fontSize = "28px";
-    mesaj.style.fontWeight = "bold";
-    mesaj.style.boxShadow = "0 0 30px hotpink";
-    mesaj.style.zIndex = "99999";
+ mesaj.style.position = "fixed";
+mesaj.style.top = "50%";
+mesaj.style.left = "50%";
+mesaj.style.transform = "translate(-50%, -50%)";
+
+mesaj.style.width = "340px";
+mesaj.style.maxWidth = "90%";
+
+mesaj.style.background = "#ff69b4";
+mesaj.style.color = "white";
+
+mesaj.style.padding = "40px";
+
+mesaj.style.borderRadius = "30px";
+
+mesaj.style.textAlign = "center";
+
+mesaj.style.fontSize = "24px";
+mesaj.style.fontWeight = "bold";
+mesaj.style.lineHeight = "1.5";
+
+mesaj.style.boxShadow = "0 0 35px hotpink";
+
+mesaj.style.border = "4px solid white";
+
+mesaj.style.zIndex = "99999";
 
     document.body.appendChild(mesaj);
 
