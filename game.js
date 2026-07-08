@@ -41,6 +41,7 @@ let best = Number(localStorage.getItem("best")) || 0;
 
 const gravity = 0.45;
 const jumpPower = -8;
+const pipeWidth = 110;
 
 const bird = {
     x: 90,
@@ -201,7 +202,7 @@ function drawPipes() {
             pipeImg,
             p.x,
             p.bottom,
-            110,
+            pipeWidth,
             canvas.height - p.bottom + 50
         );
 
@@ -209,7 +210,7 @@ function drawPipes() {
         ctx.save();
 
         ctx.translate(
-            p.x + 40,
+            p.x + pipeWidth / 2,
             p.top
         );
 
@@ -217,9 +218,9 @@ function drawPipes() {
 
         ctx.drawImage(
             pipeImg,
-            -40,
-            0,
-            110,
+            -pipeWidth / 2,
+            -50,
+            pipeWidth,
             p.top + 50
         );
 
@@ -286,7 +287,7 @@ function update() {
         // Çarpışma
         if (
             bird.x + bird.w - 25 > p.x &&
-            bird.x + 25 < p.x + 110 &&
+            bird.x + 25 < p.x + pipeWidth &&
             (
                 bird.y + 25 < p.top ||
                 bird.y + bird.h - 25 > p.bottom
