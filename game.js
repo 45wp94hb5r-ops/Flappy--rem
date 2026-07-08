@@ -21,7 +21,7 @@ const menu = document.getElementById("menu");
 const gameOver = document.getElementById("gameOver");
 const scoreText = document.getElementById("scoreText");
 const scoreButton = document.getElementById("scoreButton");
-const missions = document.getElementById("missions");
+const missionsPanel = document.getElementById("missions");
 const missionList = document.getElementById("missionList");
 // Resimler
 const bg = new Image();
