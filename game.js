@@ -494,116 +494,11 @@ loveButton.onclick = function () {
         mesaj.remove();
     }, 1800);
 
-    heart.style.position = "fixed";
-    heart.style.left = Math.random() * window.innerWidth + "px";
-    heart.style.top = Math.random() * window.innerHeight + "px";
-    heart.style.fontSize = (20 + Math.random() * 50) + "px";
-    heart.style.pointerEvents = "none";
-    heart.style.zIndex = "999999";
-    heart.style.transition = "all 3s ease-out";
+    loveIndex++;
 
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.style.transform =
-            `translate(${Math.random()*600-300}px, ${Math.random()*600-300}px)
-             rotate(${Math.random()*1080}deg)
-             scale(${1 + Math.random()*2})`;
-
-        heart.style.opacity = "0";
-    }, 30);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 3000);
-}
+    if (loveIndex >= loveLevels.length) {
+        loveIndex = 0;
     }
-
-    mesaj.style.position = "fixed";
-
-    mesaj.style.top = "50%";
-
-    mesaj.style.left = "50%";
-
-    mesaj.style.transform = "translate(-50%,-50%)";
-
-    mesaj.style.background = "#ff69b4";
-
-    mesaj.style.color = "white";
-
-    mesaj.style.padding = "30px";
-
-    mesaj.style.borderRadius = "25px";
-
-    mesaj.style.textAlign = "center";
-
-    mesaj.style.fontSize = "28px";
-
-    mesaj.style.fontWeight = "bold";
-
-    mesaj.style.boxShadow = "0 0 30px hotpink";
-
-    mesaj.style.zIndex = "99999";
-
-    document.body.appendChild(mesaj);
-
-    // 💖 Kalp efekti
-
-    for (let i = 0; i < 40; i++) {
-
-        const heart = document.createElement("div");
-
-        heart.innerHTML = "💖";
-
-        heart.style.position = "fixed";
-
-        heart.style.left = Math.random() * window.innerWidth + "px";
-
-        heart.style.top = window.innerHeight + "px";
-
-        heart.style.fontSize = (20 + Math.random() * 30) + "px";
-
-        heart.style.pointerEvents = "none";
-
-        heart.style.transition = "all 3s ease-out";
-
-        heart.style.zIndex = "99998";
-
-        document.body.appendChild(heart);
-
-        setTimeout(() => {
-
-            heart.style.top = (-100 - Math.random() * 200) + "px";
-
-            heart.style.left =
-
-                (parseFloat(heart.style.left) + (Math.random() * 300 - 150)) + "px";
-
-            heart.style.opacity = "0";
-
-            heart.style.transform = `rotate(${Math.random() * 720}deg) scale(1.5)`;
-
-        }, 20);
-
-        setTimeout(() => {
-
-            heart.remove();
-
-        }, 3000);
-
-    }
-
-    setTimeout(() => {
-
-        mesaj.remove();
-
-    }, 1800);
-
-loveIndex++;
-
-if (loveIndex >= loveLevels.length) {
-    loveIndex = 0;
-}
 };
 
 // Telefonlarda kaydırmayı engelle
